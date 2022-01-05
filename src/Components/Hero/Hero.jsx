@@ -1,0 +1,79 @@
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import {
+	Navbar,
+	Button,
+	Container,
+	Form,
+	FormControl,
+	Nav,
+} from "react-bootstrap";
+import "./Hero.css";
+
+const Hero = () => {
+	const [banner, setBaneer] = useState([]);
+	const IMGPATH = "https://image.tmdb.org/t/p/w1280";
+
+	useEffect(() => {
+		axios
+			.get(
+				"https://api.themoviedb.org/3/trending/all/week?api_key=04c35731a5ee918f014970082a0088b1&language=en-US"
+			)
+			.then((res) => {
+				setBaneer(res.data.results);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	}, []);
+	return (
+		<div className="hero-img">
+			{/* {banner && banner.slice(0, 1).map((movie) => (
+                <img src={IMGPATH + movie.poster_path} alt="movie" className='hero-img' />
+            ))} */}
+			<Navbar>
+				<Container fluid>
+					<Navbar.Brand href="#">
+						{" "}
+						<img
+							src="https://netflix-clone-tau-livid.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fnetflix-logo-lg.16dcb373.png&w=640&q=75"
+							alt="logo"
+							style={{ width: "200px" }}
+						/>
+					</Navbar.Brand>
+					<Navbar.Toggle aria-controls="navbarScroll" />
+
+					<Navbar.Collapse id="navbarScroll">
+						<Nav className="me-auto"></Nav>
+						<Form className="d-flex">
+							<FormControl
+								type="search"
+								placeholder="Search"
+								className="me-2"
+								aria-label="Search"
+							/>
+							<Button variant="outline-light">Search</Button>
+						</Form>
+					</Navbar.Collapse>
+				</Container>
+			</Navbar>
+			<div
+				style={{ position: "absolute", padding: "2px", top: "35vh" }}
+				className="px-4"
+			>
+				<p style={{ color: "#fff", fontSize: "30px" }}>
+					Spider-Man: No Way Home
+				</p>
+				<p style={{ color: "#fff", fontSize: "15px" }}>
+					Peter Parker is unmasked and no longer able to separate his normal{" "}
+					<br />
+					life from the high-stakes of being a super-hero. When he asks for help{" "}
+					<br />
+					from Doctor Strange the stakes become even more dangerous, for....
+				</p>
+			</div>
+		</div>
+	);
+};
+
+export default Hero;

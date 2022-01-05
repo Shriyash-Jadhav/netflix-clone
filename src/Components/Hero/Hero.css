@@ -1,0 +1,7 @@
+.hero-img {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.93)),
+		url(https://image.tmdb.org/t/p/original//1Rr5SrvHxMXHu5RjKpaMba8VTzi.jpg);
+	background-size: cover;
+	background-position: center top;
+	height: 80vh;
+}
