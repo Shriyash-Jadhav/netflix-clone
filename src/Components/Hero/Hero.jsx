@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import {
 	Navbar,
 	Button,
@@ -11,21 +10,6 @@ import {
 import "./Hero.css";
 
 const Hero = () => {
-	const [banner, setBaneer] = useState([]);
-	const IMGPATH = "https://image.tmdb.org/t/p/w1280";
-
-	useEffect(() => {
-		axios
-			.get(
-				"https://api.themoviedb.org/3/trending/all/week?api_key=04c35731a5ee918f014970082a0088b1&language=en-US"
-			)
-			.then((res) => {
-				setBaneer(res.data.results);
-			})
-			.catch((err) => {
-				console.log(err);
-			});
-	}, []);
 	return (
 		<div className="hero-img">
 			{/* {banner && banner.slice(0, 1).map((movie) => (

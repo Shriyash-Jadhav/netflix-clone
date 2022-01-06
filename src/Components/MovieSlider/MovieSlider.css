@@ -1,0 +1,18 @@
+.movie-slider {
+	background-color: #000;
+}
+h4 {
+	color: #fff;
+	padding: 8px;
+}
+.movies {
+	display: flex;
+}
+.movie {
+	transition: transform 0.3s; /* Animation */
+	/* height: 80vh; */
+	overflow: hidden;
+}
+.movie:hover {
+	transform: scale(1.2);
+}
