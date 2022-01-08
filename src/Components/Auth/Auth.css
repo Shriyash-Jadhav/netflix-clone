@@ -1,0 +1,29 @@
+.auth-img {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.93)),
+		url(https://netflix-clone-tau-livid.vercel.app/_next/static/media/netflix-bg.2f145447.jpg);
+	background-size: cover;
+	background-position: center top;
+	height: 135vh;
+}
+.container {
+	width: 400px;
+}
+.sign-in {
+	border: none;
+	padding: 10px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 40px 2px 5px 2px;
+	cursor: pointer;
+	background-color: red;
+	color: #fff;
+	border-radius: 10px;
+	font-weight: bold;
+	width: 300px;
+}
+.footer {
+	padding: 25px 150px;
+	opacity: 0.8;
+}

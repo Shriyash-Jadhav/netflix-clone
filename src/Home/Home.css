@@ -1,0 +1,15 @@
+.home-img {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.93)),
+		url(https://netflix-clone-tau-livid.vercel.app/_next/static/media/netflix-bg.2f145447.jpg);
+	background-size: cover;
+	background-position: center top;
+	height: 100vh;
+}
+.faq-question {
+	background-color: #303030;
+	padding: 10px;
+}
+.faq-answer {
+	background-color: #303030;
+	padding: 10px;
+}

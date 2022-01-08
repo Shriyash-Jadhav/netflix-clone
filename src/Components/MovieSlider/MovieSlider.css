@@ -7,12 +7,21 @@ h4 {
 }
 .movies {
 	display: flex;
+	justify-content: space-around;
 }
 .movie {
-	transition: transform 0.3s; /* Animation */
-	/* height: 80vh; */
-	overflow: hidden;
+	background-position: center top;
+	background-repeat: no-repeat;
+	cursor: pointer;
 }
-.movie:hover {
-	transform: scale(1.2);
+.movie-img {
+	width: 250px;
+	height: 200px;
+	transition: width 0.3s;
+	transition-timing-function: cubic-bezier(1, 1);
+	border-radius: 10px;
+	object-fit: cover;
+}
+.movie-img:hover {
+	width: 350px;
 }
