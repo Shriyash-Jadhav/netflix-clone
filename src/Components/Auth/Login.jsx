@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useRef, useState } from "react";
+import { useAuth } from "../../contexts/AuthContext";
+import { Link, useHistory } from "react-router-dom";
 import {
 	Navbar,
 	Button,
@@ -9,16 +11,38 @@ import {
 	InputGroup,
 	Row,
 	Col,
+	Alert,
 } from "react-bootstrap";
 import Footer from "../Footer/Footer";
 import "./Auth.css";
 const Login = () => {
+	const emailRef = useRef();
+	const passwordRef = useRef();
+	const { login } = useAuth();
+	const [error, setError] = useState("");
+	const [loading, setLoading] = useState(false);
+	const history = useHistory();
+
+	async function handleSubmit(e) {
+		e.preventDefault();
+
+		try {
+			setError("");
+			setLoading(true);
+			await login(emailRef.current.value, passwordRef.current.value);
+			history.push("/movies");
+		} catch {
+			setError("Failed to log in");
+		}
+
+		setLoading(false);
+	}
 	return (
 		<>
 			<div className="auth-img">
 				<Navbar>
 					<Container fluid>
-						<Navbar.Brand href="#">
+						<Navbar.Brand href="/">
 							{" "}
 							<img
 								src="https://netflix-clone-tau-livid.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fnetflix-logo-lg.16dcb373.png&w=640&q=75"
@@ -57,26 +81,40 @@ const Login = () => {
 					>
 						Sign In
 					</p>
-					<Form>
-						<Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-							<Form.Control type="email" placeholder="Email" />
+					{error && <Alert variant="danger">{error}</Alert>}
+
+					<Form onSubmit={handleSubmit}>
+						<Form.Group id="email">
+							<Form.Label></Form.Label>
+							<Form.Control
+								type="email"
+								ref={emailRef}
+								required
+								placeholder="Email"
+							/>
 						</Form.Group>
-						<Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-							<Form.Control type="password" placeholder="password" />
+						<Form.Group id="password">
+							<Form.Label></Form.Label>
+							<Form.Control
+								type="password"
+								ref={passwordRef}
+								required
+								placeholder="Password"
+							/>
 						</Form.Group>
 						<button className="sign-in">Sign In</button>
-						<p
-							style={{
-								color: "#fff",
-								fontSize: "15px",
-								fontWeight: "bold",
-								margin: "0px",
-								paddingBottom: "5px",
-							}}
-						>
-							New to Netflix ? <a href="/signup">Sign up now</a>
-						</p>
 					</Form>
+					<p
+						style={{
+							color: "#fff",
+							fontSize: "15px",
+							fontWeight: "bold",
+							margin: "0px",
+							paddingBottom: "5px",
+						}}
+					>
+						New to Netflix ? <Link to="/signup">Sign up now</Link>
+					</p>
 				</div>
 				<div className="footer">
 					<Row>

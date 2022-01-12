@@ -1,0 +1,8 @@
+export const trendingMoviesApiURL = "https://api.themoviedb.org/3/trending/all/week?api_key=04c35731a5ee918f014970082a0088b1&language=en-US"
+export const netflixOriginalsURL = "https://api.themoviedb.org/3/discover/tv?api_key=04c35731a5ee918f014970082a0088b1&with_networks=213"
+export const topRatedMovieURL = "https://api.themoviedb.org/3/movie/top_rated?api_key=04c35731a5ee918f014970082a0088b1&language=en-US"
+export const actionMoviesApiURL = "https://api.themoviedb.org/3/discover/movie?api_key=04c35731a5ee918f014970082a0088b1&with_genres=28"
+export const comedyMoviesApiURL = "https://api.themoviedb.org/3/discover/movie?api_key=f17017cf9ab19e407243ae287d90f746&with_genres=35"
+export const horrorMoviesApiURL = "https://api.themoviedb.org/3/discover/movie?api_key=f17017cf9ab19e407243ae287d90f746&with_genres=27"
+export const romanceMoviesApiURL = "https://api.themoviedb.org/3/discover/movie?api_key=f17017cf9ab19e407243ae287d90f746&with_genres=10749"
+export const documentariesMoviesApiURL = "https://api.themoviedb.org/3/discover/movie?api_key=f17017cf9ab19e407243ae287d90f746&with_genres=99"

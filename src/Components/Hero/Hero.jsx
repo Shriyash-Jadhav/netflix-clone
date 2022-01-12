@@ -6,10 +6,29 @@ import {
 	Form,
 	FormControl,
 	Nav,
+	Alert,
 } from "react-bootstrap";
+import { useAuth } from "../../contexts/AuthContext";
+import { Link, useHistory } from "react-router-dom";
+
 import "./Hero.css";
 
 const Hero = () => {
+	const [error, setError] = useState("");
+	const { currentUser, logout } = useAuth();
+	const history = useHistory();
+
+	async function handleLogout(e) {
+		e.preventDefault();
+		setError("");
+
+		try {
+			await logout();
+			history.push("/signin");
+		} catch {
+			setError("Failed to log out");
+		}
+	}
 	return (
 		<div className="hero-img">
 			{/* {banner && banner.slice(0, 1).map((movie) => (
@@ -27,7 +46,7 @@ const Hero = () => {
 					</Navbar.Brand>
 					<Navbar.Toggle aria-controls="navbarScroll" />
 
-					<Navbar.Collapse id="navbarScroll">
+					{/* <Navbar.Collapse id="navbarScroll">
 						<Nav className="me-auto"></Nav>
 						<Form className="d-flex">
 							<FormControl
@@ -35,10 +54,12 @@ const Hero = () => {
 								placeholder="Search"
 								className="me-2"
 								aria-label="Search"
-							/>
-							<Button variant="outline-light">Search</Button>
-						</Form>
-					</Navbar.Collapse>
+							/> */}
+					<Button variant="danger" onClick={handleLogout}>
+						Logout
+					</Button>
+					{/* </Form>
+					</Navbar.Collapse> */}
 				</Container>
 			</Navbar>
 			<div

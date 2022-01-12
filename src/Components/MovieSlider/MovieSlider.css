@@ -25,3 +25,15 @@ h4 {
 .movie-img:hover {
 	width: 350px;
 }
+.movie-dropdown {
+	margin-top: 70px;
+	padding: 0px 30px;
+	display: flex;
+	justify-content: space-between;
+}
+.movie-img-dropdown {
+	width: 450px;
+	height: 250px;
+	object-fit: cover;
+	border-radius: 15px;
+}

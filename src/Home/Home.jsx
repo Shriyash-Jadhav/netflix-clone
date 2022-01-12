@@ -34,7 +34,14 @@ const Home = () => {
 						<Navbar.Collapse id="navbarScroll">
 							<Nav className="me-auto"></Nav>
 
-							<Button variant="danger">Sign In</Button>
+							<Button variant="danger">
+								<Link
+									to="/signup"
+									style={{ textDecoration: "none", color: "#fff" }}
+								>
+									Register
+								</Link>
+							</Button>
 						</Navbar.Collapse>
 					</Container>
 				</Navbar>
@@ -67,7 +74,12 @@ const Home = () => {
 							aria-describedby="basic-addon2"
 						/>
 						<Button variant="danger" id="button-addon2">
-							Get Started
+							<Link
+								to="/signup"
+								style={{ textDecoration: "none", color: "#fff" }}
+							>
+								Get Started
+							</Link>
 						</Button>
 					</InputGroup>
 				</div>
@@ -85,7 +97,7 @@ const Home = () => {
 						</h5>
 					</Col>
 					<Col sm={4}>
-						<video width="400" controls loop>
+						<video width="400" autoPlay loop muted>
 							<source
 								src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-in-0819.m4v"
 								type="video/mp4"
@@ -126,7 +138,7 @@ const Home = () => {
 						</h5>
 					</Col>
 					<Col sm={4}>
-						<video controls loop>
+						<video autoPlay loop muted>
 							<source
 								src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices-in.m4v"
 								type="video/mp4"

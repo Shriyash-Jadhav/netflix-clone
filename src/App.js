@@ -7,18 +7,23 @@ import MovieSlider from './Components/MovieSlider/MovieSlider';
 import Home from './Home/Home';
 import Login from './Components/Auth/Login';
 import Registration from './Components/Auth/Registration';
+import { AuthProvider } from "./contexts/AuthContext"
+import PrivateRoute from "./Components/PrivateRoute";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/signin" exact component={Login} />
-          <Route path="/signup" exact component={Registration} />
-          <Route path="/movies" exact component={MovieSlider} />
+        <AuthProvider>
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/signin" exact component={Login} />
+            <Route path="/signup" exact component={Registration} />
+            <PrivateRoute path="/movies" exact component={MovieSlider} />
 
-        </Switch>
+          </Switch>
+
+        </AuthProvider>
       </BrowserRouter>
     </div>
   );

@@ -5,7 +5,6 @@ import FAQS from "./FAQS";
 import "./Home.css";
 const FAQ = () => {
 	const [questions, setQuestions] = useState(data);
-	console.log(questions);
 	return (
 		<div
 			style={{

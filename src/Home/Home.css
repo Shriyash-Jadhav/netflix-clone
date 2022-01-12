@@ -8,8 +8,15 @@
 .faq-question {
 	background-color: #303030;
 	padding: 10px;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 8px;
 }
 .faq-answer {
 	background-color: #303030;
 	padding: 10px;
+}
+.faq-answerss {
+	margin-bottom: 8px;
 }
