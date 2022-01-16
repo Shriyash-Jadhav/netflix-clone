@@ -22,6 +22,8 @@ git clone https://github.com/Shriyash-Jadhav/netflix-clone.git
 To run it you must have Firebase account.
 Go to `https://console.firebase.google.com/u/0/` and create new project. Create local file: `/src/lib/firebase.prod.js` and fill in config object with your data.
 
+### This code will go in .src/firebase.js
+
 ```cs
  import firebase from "firebase/app"
  import "firebase/auth"
