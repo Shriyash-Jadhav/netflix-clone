@@ -53,7 +53,7 @@ npm run
 
 ## Author
 
-Shriyash Jadhav
+[@Shriyash-Jadhav](https://github.com/Shriyash-Jadhav) 
 
 
 ## Screenshot
